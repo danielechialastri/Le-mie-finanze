@@ -12,11 +12,9 @@
 
 #balanceChart svg{display:block;width:100%;height:auto;overflow:visible}.chart-grid{stroke:#e5ece8;stroke-width:1}.chart-axis{stroke:#9aaca3;stroke-width:1}.chart-y-label,.chart-x-label{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#71837b}.balance-area{fill:#388b6718;stroke:none}.balance-line{fill:none;stroke:#28825d;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.balance-point{fill:#fff;stroke:#28825d;stroke-width:2}
 
-/* Su iPhone i campi data hanno una larghezza intrinseca che può allargare
-   la colonna e sovrapporla al controllo adiacente. */
+/* Contiene i controlli nella griglia anche quando Safari assegna loro una
+   larghezza intrinseca maggiore della colonna. */
 form{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0}
 form>label{min-width:0}
 input,select{min-width:0;max-width:100%}
-input[type=date]{width:100%;min-width:0;max-width:100%;padding-left:8px;padding-right:8px}
-.date-field{grid-column:1/-1;min-width:0}
-@media(max-width:600px){#move,#recform{grid-template-columns:minmax(0,1fr)}#move .date-field,#recform .date-field{grid-column:auto}#move .primary,#recform .primary{grid-column:1}}
+@media(max-width:600px){#recform .frequency-field{grid-column:1/-1}}
