@@ -19,3 +19,4 @@ form>label{min-width:0}
 input,select{min-width:0;max-width:100%}
 input[type=date]{width:100%;min-width:0;max-width:100%;padding-left:8px;padding-right:8px}
 .date-field{grid-column:1/-1;min-width:0}
+@media(max-width:600px){#move,#recform{grid-template-columns:minmax(0,1fr)}#move .date-field,#recform .date-field{grid-column:auto}#move .primary,#recform .primary{grid-column:1}}
