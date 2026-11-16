@@ -17,7 +17,10 @@
 form{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0}
 form>label{min-width:0}
 input,select{min-width:0;max-width:100%}
-/* Workaround per WebKit/iOS: il padding sui campi data può far ignorare
-   la larghezza 100%, facendoli uscire dalla cella della griglia. */
-input[type=date]{width:100%;min-width:0;max-width:100%;height:43px;min-height:43px;padding:0!important;box-sizing:border-box}
+/* Il campo nativo resta interattivo ma non determina la dimensione visibile:
+   la cornice segue esattamente le dimensioni degli altri controlli. */
+.date-control{position:relative;display:block;width:100%;height:43px;min-width:0;margin-top:5px;border:1px solid #d8e3dd;border-radius:8px;background:#fff;overflow:hidden}
+.date-value{display:flex;align-items:center;width:100%;height:100%;padding:0 11px;color:#173b35;font:inherit;font-size:15px;font-weight:400;white-space:nowrap}
+.date-control input[type=date]{position:absolute;inset:0;z-index:1;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;margin:0;padding:0;border:0;border-radius:inherit;background:transparent;opacity:.01;box-sizing:border-box}
+.date-control:focus-within{outline:2px solid #87b6a7;outline-offset:1px}
 @media(max-width:600px){#recform .frequency-field{grid-column:1/-1}}
