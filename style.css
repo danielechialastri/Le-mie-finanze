@@ -11,3 +11,10 @@
 .balance-chart-row{display:grid;grid-template-columns:64px minmax(40px,1fr) auto;align-items:center;gap:8px;font-size:11px}.balance-chart-row>b{font-size:11px;white-space:nowrap}.balance-chart-row .category-track i.income-track,.category-track i.income-track{background:#388b67}.balance-chart-row .category-track i.balance-negative{background:#d08a42}.comparison-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:10px 0;border-bottom:1px solid #e8efeb;font-size:12px}.comparison-row b{grid-column:span 2}.comparison-row strong{text-align:right}.recurring-total{font-weight:700;color:#173b35;font-size:14px!important}.chart-month>small{white-space:nowrap}
 
 #balanceChart svg{display:block;width:100%;height:auto;overflow:visible}.chart-grid{stroke:#e5ece8;stroke-width:1}.chart-axis{stroke:#9aaca3;stroke-width:1}.chart-y-label,.chart-x-label{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#71837b}.balance-area{fill:#388b6718;stroke:none}.balance-line{fill:none;stroke:#28825d;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.balance-point{fill:#fff;stroke:#28825d;stroke-width:2}
+
+/* Su iPhone i campi data hanno una larghezza intrinseca che può allargare
+   la colonna e sovrapporla al controllo adiacente. */
+form{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0}
+form>label{min-width:0}
+input,select{min-width:0;max-width:100%}
+input[type=date]{width:100%;min-width:0;max-width:100%;padding-left:8px;padding-right:8px}
